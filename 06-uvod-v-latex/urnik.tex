@@ -85,7 +85,7 @@ matematika.
 % Spodnja vrstica ne začne novega odstavka, zato ne bi smela biti zamaknjena.
 % To popravite z ukazom `\noindent` ali pa tako, da odstranite prazno vrstico.
 % (Nekoliko lepše izgleda, če v prazno vrstico vstavite % za komentar.)
-Hierarhija značk omogoča enostavno vnašanje podatkov, hkrati pa poskrbi za preglednost.
+\noindent Hierarhija značk omogoča enostavno vnašanje podatkov, hkrati pa poskrbi za preglednost.
 Še enostavnejše je dostopanje do posameznih podatkov, saj večina programskih jezikov že
 vsebuje metode za delo z XML datotekami.
 
@@ -316,30 +316,33 @@ Naslednje vrstice bodo pojasnile, kako implementirati postopek požrešne metode
 % Spodnja vrstica ne začne novega odstavka, zato ne bi smela biti zamaknjena.
 % To popravite z ukazom `\noindent` ali pa tako, da odstranite prazno vrstico.
 % (Nekoliko lepše izgleda, če v prazno vrstico vstavite % za komentar.)
-Zgoraj predstavljena shema je le grob opis postopka, ki ga nad urnikom izvaja požrešna metoda,
+\noindent Zgoraj predstavljena shema je le grob opis postopka, ki ga nad urnikom izvaja požrešna metoda,
 zato si je smiselno podrobneje ogledati posamezne korake.
 
-   Z zanko se sprehodimo po vektorju vseh predmetov. Predmet na \(i\)-tem koraku
-   označimo s \( text{predmet} _i\).
-
-   Naslednja vgnezdena zanka nas popelje po vseh predavalnicah. Predavalnico na
-   ??-tem koraku označimo s ??.
-
-   Za vse proste termine ?? izračunamo ceno vstavljanja
-   ??, ki ga sestavlja ??, profesor, ki ta predmet predava,
-   ter skupina, kateri je predmet namenjen.
-
-   Če je trenutna cena boljša od najboljše dosedanje, potem najboljša dosedanja
-   dobi vrednost trenutne. Hkrati si zapomnimo, za kateri termin smo izračunali ceno
-   vstavljanja, da bomo ?? na koncu vstavili v termin z najboljšo
-   ceno vstavljanja.
-
-   Ko preverimo vse proste termine vseh predavalnic, vstavimo ??
-   v termin z najboljšo ceno.
-
-   Sedaj se ponovno vrnemo na začetek in pogledamo najugodnejši termin za naslednji
-   predmet. Postopek ponavljamo, dokler se zunanja zanka, ki se sprehaja po vseh predmetih,
-   ne zaključi. S tem smo namreč v urnik vstavili vse predmete.
+ 
+ \begin{enumerate}
+     \item Z zanko se sprehodimo po vektorju vseh predmetov. Predmet na \(i\)-tem koraku
+     označimo s \( \text {predmet} _i\).
+  
+     \item Naslednja vgnezdena zanka nas popelje po vseh predavalnicah. Predavalnico na
+     \(j\)-tem koraku označimo s \( \text{predavalnica} _j\).
+  
+     \item Za vse proste termine \( \text{predavalnice} _j\) izračunamo ceno vstavljanja
+     \( \text{srečanja}_i\), ki ga sestavlja \( \text {predmet} _i\), profesor, ki ta predmet predava,
+     ter skupina, kateri je predmet namenjen.
+  
+     \item Če je trenutna cena boljša od najboljše dosedanje, potem najboljša dosedanja
+     dobi vrednost trenutne. Hkrati si zapomnimo, za kateri termin smo izračunali ceno
+     vstavljanja, da bomo \( \text {predmet} _i\) na koncu vstavili v termin z najboljšo
+     ceno vstavljanja.
+  
+     \item Ko preverimo vse proste termine vseh predavalnic, vstavimo \( \text {srečanje} _i\)
+     v termin z najboljšo ceno.
+  
+     \item Sedaj se ponovno vrnemo na začetek in pogledamo najugodnejši termin za naslednji
+     predmet. Postopek ponavljamo, dokler se zunanja zanka, ki se sprehaja po vseh predmetih,
+     ne zaključi. S tem smo namreč v urnik vstavili vse predmete.
+ \end{enumerate}
 
 \subsection{Optimizacijske metode} % podrazdelek
 
@@ -363,7 +366,7 @@ Na primeru urnika si oglejmo, katere so smiselne operacije:
 % Spodnja vrstica ne začne novega odstavka, zato ne bi smela biti zamaknjena.
 % To popravite z ukazom `\noindent` ali pa tako, da odstranite prazno vrstico.
 % (Nekoliko lepše izgleda, če v prazno vrstico vstavite % za komentar.)
-\emph{Okolica} operacije je množica vseh možnih sprememb, ki jih lahko s to operacijo
+\noindent \emph{Okolica} operacije je množica vseh možnih sprememb, ki jih lahko s to operacijo
 opravimo na nekem koraku optimizacijskega postopka. Okolica zamenjave dveh srečanj v urniku
 je torej množica vseh možnih zamenjav srečanj v trenutnem urniku.
 
@@ -440,9 +443,9 @@ sistematičen način odpraviti to težavo.
 Glede na to, da bi naj iskanje s tabuji odpravilo problem vračanja v isti lokalni maksimum,
 prepovedujemo izvajanje sprememb, s katerimi bi se vrnili v že najden lokalni maksimum.
 
-Rešitev se ponuja kar sama -- za naslednjih ?? korakov prepovemo vsako spremembo, ki jo
-opravimo v koraku optimizacije. Izbira konstante ?? je odvisna od samega problema, saj
-ne obstaja neki splošen ??, ki bi nas v vsakem primeru pripeljal iz lokalnega ekstrema.
+Rešitev se ponuja kar sama -- za naslednjih \(n\) korakov prepovemo vsako spremembo, ki jo
+opravimo v koraku optimizacije. Izbira konstante \(n\) je odvisna od samega problema, saj
+ne obstaja neki splošen \(n\), ki bi nas v vsakem primeru pripeljal iz lokalnega ekstrema.
 Imamo torej seznam prepovedanih sprememb -- \emph{tabujev} in na vsakem koraku za izbrano
 spremembo preverimo, če je element seznama tabujev. Če spremembe ni v seznamu tabujev, jo
 preprosto izvedemo, v primeru, da je, pa postopek vrnemo na iskanje druge spremembe.
@@ -450,15 +453,15 @@ Algoritem iskanja s tabuji se od lokalnega vzpenjanja torej razlikuje le v tem, 
 izbiro spremembe preveri, če je vsebovana v seznamu prepovedanih sprememb. Poglejmo, zakaj
 je takšno postopanje smiselno.
 
-Naj bo ?? ter ?? sprememba urnika, ki nas je pripeljala v lokalni maksimum. To
-spremembo (npr.\ zamenjava ?? in ??) sedaj shranimo v
-seznam tabujev. V naslednjem koraku izvedemo spremembo ??, ki se prav tako shrani v
+Naj bo \(n = 100\) ter \(s_1\) sprememba urnika, ki nas je pripeljala v lokalni maksimum. To
+spremembo (npr.\ zamenjava \( \text{srečanja}_i\) in \( \text{srečanja}_j\)) sedaj shranimo v
+seznam tabujev. V naslednjem koraku izvedemo spremembo \(s_2\), ki se prav tako shrani v
 seznam prepovedanih sprememb. Podobno naredimo za vse spremembe v nadaljnih korakih. S
-tem poskrbimo, da se lahko v isti lokalni maksimum vrnemo šele čez ?? korakov, saj
-se sprememba ??, ki vodi do lokalnega maksimuma, šele tedaj izbriše iz seznama
+tem poskrbimo, da se lahko v isti lokalni maksimum vrnemo šele čez \(n = 100\) korakov, saj
+se sprememba \(s_1\), ki vodi do lokalnega maksimuma, šele tedaj izbriše iz seznama
 prepovedanih sprememb.
 
-Če smo dosegli lokalni maksimum in vrednost kriterijske funkcije v ?? korakih uspemo
+Če smo dosegli lokalni maksimum in vrednost kriterijske funkcije v \(n\) korakih uspemo
 rešiti iz okolice tega lokalnega maksimuma, potem se je metoda iskanja s tabuji izkazala
 kot uspešna.
 
@@ -480,14 +483,14 @@ točk, oziroma ki ima največjo vrednost kriterijske funkcije.
 
    Zanko izvajamo, dokler ne dosežemo enega izmed ustavitvenih pogojev.
 
-   Rešitev ??, ki smo jo dobili s pomočjo požrešne metode, izboljšamo z lokalnim vzpenjanjem
+   Rešitev \(r\), ki smo jo dobili s pomočjo požrešne metode, izboljšamo z lokalnim vzpenjanjem
    ali iskanjem s tabuji. Kot je že bilo povedano, je iskanje s tabuji nekoliko primernejša metoda,
    saj nas bo lažje pripeljala iz lokalnega maksimuma, do katerega smo prišli s požrešno metodo.
    Vsekakor pa ni nič narobe, če srečo poskusimo tudi z lokalnim vzpenjanjem.
 
-   Na vsakem koraku ocenimo izboljšamo rešitev ??. Če je vrednost kriterijske funkcije
+   Na vsakem koraku ocenimo izboljšamo rešitev \(r\). Če je vrednost kriterijske funkcije
    za trenutno rešitev prešla zastavljeno zadovoljivo mejo, potem se program zaključi. Prav tako
-   se zaključi, če po ?? korakih še vedno tičimo v istem lokalnem maksimumu.
+   se zaključi, če po \(n\) korakih še vedno tičimo v istem lokalnem maksimumu.
 
 % Spodnja vrstica ne začne novega odstavka, zato ne bi smela biti zamaknjena.
 % To popravite z ukazom `\noindent` ali pa tako, da odstranite prazno vrstico.
