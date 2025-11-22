@@ -1,3 +1,5 @@
+To je povezava do moje spletne strani: 
+
 <!-- glavni naslov -->
 # Računalniški praktikum #
 <!-- To je komentar, ki bo na prikazanem Markdown-u skrit. 
