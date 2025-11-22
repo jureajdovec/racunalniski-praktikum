@@ -1,4 +1,4 @@
-To je povezava do moje spletne strani: 
+To je povezava do moje spletne strani: https://jureajdovec.github.io/
 
 <!-- glavni naslov -->
 # Računalniški praktikum #
