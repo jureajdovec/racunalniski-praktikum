@@ -91,6 +91,9 @@ Prirejeno iz virov:
    stolpca ali vsa števila v katerikoli od glavnih diagonal.
 \end{definicija}
 
+% oznaka za sklic je \ref !!!
+% če želimo pa dati oznako, pa se da \label !!!
+
 Primer magičnega kvadrata reda 3 je prikazan v tabeli \ref{table:mag3}.
 
 % - napis nad tabelo: Magični kvadrat reda 3
@@ -256,10 +259,10 @@ in zato kvadrat ni normalen.
 % Začetek dokaza (proof nam ni treba definirati v preambuli. ker je že vključen v paletu amsthm)
    \begin{proof}
       V normalnem magičnem kvadratu reda $n$ je vsota vseh nastopajočih
-      števil (glej ?? na strani ??) enaka
+      števil (glej \ref{eq:numbers} na strani \ref{eq:numbers}) enaka
       $1+2+3+\dots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)$. Ker imamo
       v kvadratu $n$ vrstic z enako vsoto, je vsota števil v eni vrstici
-      enaka številu $\m(n)$. % sklica: eq:numbers, eq:numbers
+      enaka številu $\m(n)$.
    \end{proof}
 % Konec dokaza
 
